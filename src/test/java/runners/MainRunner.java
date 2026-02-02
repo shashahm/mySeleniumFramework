@@ -5,9 +5,9 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(features = {"classpath:features"},
         glue = {"stepDefinitions"},
-        tags = "@regression",
+        tags = "@login",
         monochrome = true,
-        dryRun = false,
+        dryRun = true,
         plugin = {"pretty","html:target/cucumber_report.html","json:target/cucumber_report.json"}
 )
 public class MainRunner extends AbstractTestNGCucumberTests {
