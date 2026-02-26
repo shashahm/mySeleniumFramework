@@ -4,29 +4,23 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import static driver.DriverFactory.getDriver;
+import pageObjects.Base_PO;
 
-public class ContactUs_StepDefinitions  {
+
+
+public class ContactUs_StepDefinitions  extends Base_PO {
 
     private WebDriver driver =  getDriver();
 
-    private static final RandomStringUtils RNG = RandomStringUtils.secure();
-    public String generateRandomNumber(int length){
-       return RNG.nextNumeric(length);
-    }
-    public String generateRandomString(int length){
-        return RNG.nextAlphanumeric(length);
-    }
 
 
     @Given("I access the webdriver university contact us page")
     public void i_access_the_webdriver_university_contact_us_page() {
-        driver.get("https://www.webdriveruniversity.com/Contact-Us/contactus.html");
+       navigateToUrl("https://www.webdriveruniversity.com/Contact-Us/contactus.html");
     }
 
     @When("I enter a unique first name")
